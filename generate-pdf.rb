@@ -2,6 +2,7 @@ require 'csv'
 require './models/beer'
 require './models/brewery'
 require "prawn"
+Prawn::Font::AFM.hide_m17n_warning = true
 
 rows = CSV.table("beers.csv")
 
@@ -28,12 +29,13 @@ Prawn::Document.generate("out.pdf") do
       top_margin = bottom_margin = 5
       left_margin = right_margin = 5
       columns = 3
-      bounding_box([0, cursor - top_margin], :width => bounds.width, :height => 110) do
-        #stroke_bounds
+      bounding_box([0, cursor - top_margin], :width => bounds.width, :height => 115) do
+        stroke_color "000000"
+        stroke_bounds
         bounding_box([left_margin, cursor - top_margin], :width => bounds.width - left_margin - right_margin, :height => bounds.height) do
           float do
-            bounding_box([bounds.width / columns, cursor - top_margin], :width => bounds.width / columns * 2) do
-              text "#{beer.description}"
+            bounding_box([bounds.width / columns + left_margin, cursor], :width => bounds.width / columns * 2) do
+              text_box "#{beer.description}", :height => 60, :size =>8, :overflow => :shrink_to_fit
             end
           end
           font("Helvetica", :style => :bold, :size => 15) do
@@ -52,10 +54,12 @@ Prawn::Document.generate("out.pdf") do
           bounding_box([0, cursor], :width => bounds.width / columns) do
             text "#{beer.abv || 'N/A'}%  #{beer.ibu || 'N/A'} IBU"
           end
+          stroke_color "aaaaaa"
+          stroke do
+            horizontal_rule
+          end
           bounding_box([0, cursor], :width => bounds.width, :height => cursor - left_margin - bottom_margin) do
-            text_box "Notes", :at => [left_margin, bounds.height - top_margin], :size => 10
-            stroke_color "aaaaaa"
-            stroke_bounds
+            text_box "Notes", :at => [0, bounds.height - top_margin], :size => 10
           end
         end
       end
