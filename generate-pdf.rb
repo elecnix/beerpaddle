@@ -25,11 +25,22 @@ Prawn::Document.generate("out.pdf") do
     if (index != 0) then
       start_new_page
     end
+    text_box "Nom:", :at => [0, bounds.height], :size => 10
+    line [30, bounds.height - 8], [200, bounds.height - 8]
+    text_box "Date: 29 septembre 2018", :at => [210, bounds.height], :size => 10
+    stroke
+    text_rendering_mode(:fill_stroke) do
+      fill_color "ffffff"
+      stroke_color "000000"
+      text_box "#{index+1}", :at => [bounds.width - 30, bounds.height + 10], :size => 30, :styles => [:bold]
+    end
+    fill_color "000000"
+    move_down 10
     page.each do |beer|
       top_margin = bottom_margin = 5
       left_margin = right_margin = 5
       columns = 3
-      bounding_box([0, cursor - top_margin], :width => bounds.width, :height => 115) do
+      bounding_box([0, cursor - top_margin], :width => bounds.width, :height => 110) do
         stroke_color "000000"
         stroke_bounds
         bounding_box([left_margin, cursor - top_margin], :width => bounds.width - left_margin - right_margin, :height => bounds.height) do
