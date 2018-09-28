@@ -71,6 +71,29 @@ Prawn::Document.generate("out.pdf") do
           end
           bounding_box([0, cursor], :width => bounds.width, :height => cursor - left_margin - bottom_margin) do
             text_box "Notes", :at => [0, bounds.height - top_margin], :size => 10
+            asdf = cursor
+            font_size(7.5) do
+              bounding_box([bounds.width - 120, asdf - 2], :width => 150) do
+                text "Arôme:"
+                text "Apparence:"
+                text "Goût:"
+                text "Texture:"
+                text "Général:"
+              end
+              bounding_box([bounds.width - 70, asdf - 2], :width => 150) do
+                text "_____ / 12"
+                text "_____ / 3"
+                text "_____ / 20"
+                text "_____ / 5"
+                text "_____ / 10"
+              end
+              bounding_box([bounds.width - 25, asdf - 5], :width => 25, :height => bounds.height - bottom_margin) do
+                stroke_bounds
+              end
+              bounding_box([bounds.width - 24, asdf - 8], :width => 25, :height => bounds.height - bottom_margin) do
+                text "TOTAL"
+              end
+            end
           end
         end
       end
