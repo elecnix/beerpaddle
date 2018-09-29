@@ -16,11 +16,8 @@ beers = rows.map do |row|
   Beer.new(row[:name], breweries[row[:brewery]], row[:type], row[:abv], row[:ibu], row[:description])
 end
 
-beers.each do |beer|
-  print "#{beer.name}\t#{beer.brewery.name}\n"
-end
-
 Prawn::Document.generate("out.pdf") do
+  beer_index = -1
   beers.each_slice(6).each_with_index do |page, index|
     if (index != 0) then
       start_new_page
@@ -37,10 +34,15 @@ Prawn::Document.generate("out.pdf") do
     fill_color "000000"
     move_down 10
     page.each do |beer|
+      beer_index += 1
       top_margin = bottom_margin = 5
       left_margin = right_margin = 5
       columns = 3
       bounding_box([0, cursor - top_margin], :width => bounds.width, :height => 110) do
+        stroke_color "000000"
+        text_rendering_mode(:fill_stroke) do
+          text_box "P#{index+1}  #{beer_index+1}", :at => [10, 30], :size => 30
+        end
         stroke_color "000000"
         stroke_bounds
         bounding_box([left_margin, cursor - top_margin], :width => bounds.width - left_margin - right_margin, :height => bounds.height) do
