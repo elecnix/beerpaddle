@@ -1,0 +1,53 @@
+repo_name: elecnix/beerpaddle
+report_id: 21a9d7001534e53c40fafc3795c701cf
+repo_type: Public
+timestamp: '2023-11-09T15:27:39+00:00'
+requested_by: elecnix
+provider: github
+branch: master
+detected_tools_count: 4
+tools:
+- name: Ruby
+  description: A dynamic, interpreted, open source programming language with a focus
+    on simplicity and productivity
+  website_url: https://www.ruby-lang.org
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/989/ruby.png
+  detection_source: Repo Metadata
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
+- name: RubyGems
+  description: Easily download, install, and use ruby software packages on your system
+  website_url: https://rubygems.org/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/service/12795/5jL6-BA5_400x400.jpeg
+  detection_source: Gemfile
+  last_updated_by: Nicolas Marchildon
+  last_updated_on: 2018-09-23 22:28:44.000000000 Z
+- name: prawn
+  description: Prawn is a fast, tiny, and nimble PDF generator for Ruby
+  package_url: https://rubygems.org/prawn
+  version: 2.2.2
+  license: GPL-2.0,GPL-3.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/19058/default_cafacebf9602efba5c9e675f02335a1684f56941.png
+  detection_source_url: Gemfile.lock
+  detection_source: Gemfile
+  last_updated_by: Nicolas Marchildon
+  last_updated_on: 2018-09-23 22:28:44.000000000 Z
