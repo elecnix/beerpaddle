@@ -1,7 +1,8 @@
 repo_name: elecnix/beerpaddle
 report_id: 21a9d7001534e53c40fafc3795c701cf
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T15:27:39+00:00'
+timestamp: '2024-01-04T14:59:12+00:00'
 requested_by: elecnix
 provider: github
 branch: master
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/989/ruby.png
+  detection_source_url: https://github.com/elecnix/beerpaddle
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -25,6 +27,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/elecnix/beerpaddle
   detection_source: Repo Metadata
 - name: RubyGems
   description: Easily download, install, and use ruby software packages on your system
@@ -34,6 +37,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Package Managers
   image_url: https://img.stackshare.io/service/12795/5jL6-BA5_400x400.jpeg
+  detection_source_url: https://github.com/elecnix/beerpaddle/blob/master/Gemfile
   detection_source: Gemfile
   last_updated_by: Nicolas Marchildon
   last_updated_on: 2018-09-23 22:28:44.000000000 Z
@@ -47,7 +51,7 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/19058/default_cafacebf9602efba5c9e675f02335a1684f56941.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/elecnix/beerpaddle/blob/master/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: Nicolas Marchildon
   last_updated_on: 2018-09-23 22:28:44.000000000 Z
